@@ -1,3 +1,6 @@
+//require("url?limit=20000!app/img/WallpaperPatrickGabrielli.jpg");
+//require("url?limit=20000!app/img/roelverbuntlogogroot.png");
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
@@ -17,6 +20,7 @@ const PATHS = {
 		path.join(root, 'node_modules/purecss'),
 		path.join(root, 'app/main.css'),
 	], 
+	images: path.join(root, 'app/img'),
 	build: path.join(root, 'build')
 };
 
@@ -36,7 +40,13 @@ const common = {
    }, 
    plugins: [
 		new HtmlWebpackPlugin({ title: 'Webpack demo' }) 
-	]
+	],
+	module: {
+     loaders: [
+        { test: /\.(png|jpg)$/, loader: 'url-loader?limit=15000'}
+      //  { test: /\.(png|jpg)$/, loader: 'file-loader'}
+     ]
+   }
 };
 
 var config;

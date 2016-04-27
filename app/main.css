@@ -1,4 +1,11 @@
 body{
 	color:#f6c399;
-	background:#887d22
+	background: url('img/bg-sun.jpg');
+}
+
+.diffie {
+	display: block;
+	background-color: rgba(255,255,255,0.5);
+	margin: 20px;
+	padding: 50px;
 }
